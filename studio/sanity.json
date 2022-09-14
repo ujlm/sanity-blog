@@ -1,21 +1,29 @@
 {
   "root": true,
   "project": {
-    "name": "my-blog"
+    "name": "scamradar"
   },
   "api": {
-    "projectId": "0wopf0m0",
+    "projectId": "15hikrip",
     "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
-    "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool"
   ],
-  "parts": [{
-    "name": "part:@sanity/base/schema",
-    "path": "./schemas/schema.js"
-  }]
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ]
 }
